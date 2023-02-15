@@ -16,6 +16,7 @@ public class CommentController {
 	
 	@Autowired
 	CommentService commentService;
+	
 	@Autowired
 	UserService userService;
 	

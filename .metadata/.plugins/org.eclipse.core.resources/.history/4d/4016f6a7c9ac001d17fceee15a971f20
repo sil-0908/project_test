@@ -1,7 +1,0 @@
-const comu_btn = document.querySelectorAll('.comu_btn');
-
-for(var i = 0; i<comu_btn.length; i++) {
-    comu_btn[i].addEventListener('click', function(){
-        this.classList.toggle('fas');
-    });
-}
