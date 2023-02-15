@@ -25,24 +25,16 @@ public class VideoDao {
 	public List<VideoDto> list() {
 		return sqlSessionTemplate.selectList("video.list");
 	}
-
+	
 //	video_detail -  02.10 장민실
 	public VideoDto detail(int video_id) {
 		return sqlSessionTemplate.selectOne("video.detail", video_id);
 	}
 
+//	video_detail_actorName 02.10 장민실 
 	public List<VideoDto> actor(int video_id) {
 		return sqlSessionTemplate.selectList("video.actor", video_id);
 	}
-
-	
-	
-//	//상세조회 -02.07 배철우
-//	public Map<String, Object> selectDetail(Map<String,Object> map) {
-//		// selectOne:데이터를 한개만 가져올때 사용 
-//		return this.sqlSessionTemplate.selectOne("video.select_detail",map);
-//		
-//	}
 
 	
 	

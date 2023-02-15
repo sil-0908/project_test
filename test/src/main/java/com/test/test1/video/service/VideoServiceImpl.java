@@ -29,24 +29,18 @@ public class VideoServiceImpl implements VideoService {
 	public List<VideoDto> list() {
 		return videoDao.list();
 	}
-
+	
+//	video_detail 02.10 장민실
 	@Override
 	public VideoDto detail(int video_id) {
 		return videoDao.detail(video_id);
 	}
 
+//	video_detail_actorName 02.10 장민실 
 	@Override
 	public List<VideoDto> actor(int video_id) {
 		return videoDao.actor(video_id);
 	}
-
-	
-	
-//	@Override
-//	public Map<String, Object> detail(Map<String, Object> map){
-//	  
-//		return this.videoDao.selectDetail(map);
-//	}
 	
 
 
