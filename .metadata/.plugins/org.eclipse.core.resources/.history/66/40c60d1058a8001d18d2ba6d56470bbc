@@ -1,0 +1,5 @@
+package com.test.test1.video.dto;
+
+public class ActorDto {
+
+}

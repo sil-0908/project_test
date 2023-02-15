@@ -1,0 +1,11 @@
+package com.test.test1.video.dto;
+
+public class ActorDto {
+	
+	private int actor_id;
+	private String kor_name, eng_name;
+	
+	
+
+
+}

@@ -1,0 +1,74 @@
+package com.test.test1.video.dto;
+
+public class VideoDto {
+	
+	public String title, video_url, image_url, summary, country, grade;
+	public int year, recommand;
+	
+	public String getTitle() {
+		return title;
+	}
+	
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	public String getVideo_url() {
+		return video_url;
+	}
+	
+	public void setVideo_url(String video_url) {
+		this.video_url = video_url;
+	}
+	
+	public String getImage_url() {
+		return image_url;
+	}
+	
+	public void setImage_url(String image_url) {
+		this.image_url = image_url;
+	}
+	
+	public String getSummary() {
+		return summary;
+	}
+	
+	public void setSummary(String summary) {
+		this.summary = summary;
+	}
+	
+	public String getCountry() {
+		return country;
+	}
+	
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	
+	public String getGrade() {
+		return grade;
+	}
+	
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+	
+	public int getYear() {
+		return year;
+	}
+	
+	public void setYear(int year) {
+		this.year = year;
+	}
+	
+	public int getRecommand() {
+		return recommand;
+	}
+	
+	public void setRecommand(int recommand) {
+		this.recommand = recommand;
+	}
+	
+	
+
+}

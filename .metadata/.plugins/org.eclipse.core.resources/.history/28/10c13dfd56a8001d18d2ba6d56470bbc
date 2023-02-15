@@ -1,0 +1,8 @@
+package com.test.test1.video.dto;
+
+public class VideoDto {
+	
+	public String title, video_url, image_url, summary, country, grade;
+	public int year, recommand;
+
+}
