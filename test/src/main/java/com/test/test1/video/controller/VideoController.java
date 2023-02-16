@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -39,6 +40,18 @@ public class VideoController {
 
 	    return mav;
 	}
+	
+//	@RequestMapping("create")
+//	public ModelAndView create(ModelAndView mv) {
+//		mv.setViewName("video/create");
+//		return mv;
+//	}
+//	
+//	@RequestMapping(value="create", method=RequestMethod.POST)
+//	public String create_post(@ModelAttribute VideoDto dto) {
+//		videoService.create(dto);
+//		return "common/main";
+//	}
 	
 //	영상 전체조회 페이지 - 02.07 배철우
 //	DTO 생성 후 DTO 활용하여 코드재생성 - 02.10 장민실

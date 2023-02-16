@@ -41,6 +41,16 @@ public class VideoServiceImpl implements VideoService {
 	public List<VideoDto> actor(int video_id) {
 		return videoDao.actor(video_id);
 	}
+
+	@Override
+	public int getvideo_id(String id) {
+		return videoDao.getvideo_id(id);
+	}
+
+//	@Override
+//	public void create(VideoDto dto) {
+//		videoDao.create(dto);
+//	}
 	
 
 

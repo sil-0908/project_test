@@ -36,6 +36,14 @@ public class VideoDao {
 		return sqlSessionTemplate.selectList("video.actor", video_id);
 	}
 
+	public int getvideo_id(String id) {
+		return sqlSessionTemplate.selectOne("video.getid", id);
+	}
+
+//	public void create(VideoDto dto) {
+//		sqlSessionTemplate.insert("video.create", dto);
+//	}
+
 	
 	
 }

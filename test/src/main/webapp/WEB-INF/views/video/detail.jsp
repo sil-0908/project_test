@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +8,7 @@
 <link rel="stylesheet" href="/resources/css/video/detail.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 <title>video detail</title>
+<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
@@ -61,29 +63,34 @@
         <!-- comment wirte area start -->
 
         <hr>
+        <form name="form1" method="post"><input id="testp" name="test" value="${dto.video_id}">
+        <input type="button" value="장바구니에 담기" id="testbtn">
+        </form>
 
         <!-- comment list area start -->
-        <div class="comment_list_area">
-            <table class="comment_list">
-                <tr>
-                    <td id="com_title">댓글제목&nbsp;&nbsp;</td>
-                    <td id="com_data">댓글날짜</td>
-                </tr>
-                <tr>
-                    <td id="com_contents">댓글내용</td>
-                </tr>
-            </table>
-            <div class="comment_btn">
-                <i class="far fa-thumbs-up comm_btn" id="like"></i>
-                <p>좋아요</p>
-                <i class="far fa-thumbs-down comm_btn" id="bad"></i>
-                <p>싫어요</p>
-                <button id="co_comment_btn">답글</button>
-            </div>
-        </div>
+<%--        <div class="comment_list_area">
+			<c:forEach var="comt" items="${dto}">
+				<table class="comment_list">
+					<tr>
+						<td id="com_title">${dto.nickname}&nbsp;&nbsp;</td>
+						<td id="com_data"><fmt:formatDate value="${dto.create_date}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+					</tr>
+					<tr>
+						<td id="com_contents">${dto.commentary}</td>
+					</tr>
+				</table>
+		            <div class="comment_btn">
+		                <i class="far fa-thumbs-up comm_btn" id="like"></i>
+		                <p>좋아요</p>
+		                <i class="far fa-thumbs-down comm_btn" id="bad"></i>
+		                <p>싫어요</p>
+		                <button id="co_comment_btn">답글</button>
+		            </div>
+				</c:forEach>
+        </div> --%>
         <hr>
         <!-- comment list area start -->
-        
+
 	</div>
 	
 <script src="/resources/js/video/detail.js"></script>

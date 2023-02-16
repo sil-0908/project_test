@@ -22,3 +22,12 @@ if (actor_info_content_height > actor_info_height) {
 }
 
 // 댓글 원글 눌렀을때 댓글작성하기
+const testbtn = document.querySelector('#testbtn');
+const testp = document.querySelector('#testp').value;
+
+
+  $("#testbtn").on('click', function(event){ 
+	  document.form1.action="/comt/write";
+	  document.form1.submit();
+        alert(testp);
+     });

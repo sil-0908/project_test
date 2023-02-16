@@ -105,5 +105,9 @@ public class UserDao {
 	public void paid(Map<String, Object> map) {
 		sqlSessionTemplate.update("user.paid", map);
 	}
+
+	public int getid(String id) {
+		return sqlSessionTemplate.selectOne("user.getid", id);
+	}
 	
 }

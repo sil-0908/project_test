@@ -35,6 +35,8 @@ public interface UserService {
 
 	void paid(Map<String, Object> map);
 
+	int getid(String id);
+
 	
 
 

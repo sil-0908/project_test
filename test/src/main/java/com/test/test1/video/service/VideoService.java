@@ -17,6 +17,10 @@ public interface VideoService {
 
 //	vodeo_detail_actorName 02.10 장민실 
 	List<VideoDto> actor(int video_id);
+
+	int getvideo_id(String id);
+
+//	void create(VideoDto dto);
 	
 	
 

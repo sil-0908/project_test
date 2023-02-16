@@ -74,7 +74,7 @@ public class CommentDto {
 	
 	@Override
 	public String toString() {
-	return "VideoDto [commentary = " + commentary
+	return "CommentDto [commentary = " + commentary
 			+ ", nickname = " + nickname
 			+ ", comment_id = " + comment_id
 			+ ", video_id = " + video_id
