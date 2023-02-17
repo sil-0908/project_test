@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="comment">
-<!-- 
+
 	<insert id="insert">
 		<![CDATA[
-		insert into VIDEO_COMMENT (USER_ID) 
-		values (#{title}, #{summary}, #{url},#{imgurl}, #{country}, #{year}, #{grade})
+		insert into VIDEO_COMMENT (VIDEO_ID, USER_ID, COMMENTARY) 
+		values (#{video_id}, #{user_id}, #{commentary})
 		]]>
 	</insert>
-	 -->
 
 </mapper>

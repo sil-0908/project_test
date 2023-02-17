@@ -20,7 +20,7 @@
 				<source src="${dto.video_url}" type="video/mp4">
 			</video>
 		</div>
-        <!-- video area start -->
+        <!-- video area end -->
 
         <!-- movie info start -->
         <div class="info_area">
@@ -40,7 +40,7 @@
                 	</div>
             </div>
 		</div>
-        <!-- movie info start -->
+        <!-- movie info end -->
 
         <!-- button area start -->
         <div class="comunication_btn">
@@ -56,19 +56,24 @@
         <!-- button area end -->
 
         <!-- comment wirte area start -->
-        <div class="comment_area">
-            <input id="comment_input" type="text" autocomplete="off" spellcheck="false" placeholder="댓글 달아볼테면 달아보든가ㅋ">
-            <button id="comment_write_btn">작성</button>
-        </div>
-        <!-- comment wirte area start -->
+        <form name="comt_write" method="post" enctype="multipart/form-data">
+        	<input type="hidden" name="video_id" value="${dto.video_id}">
+	        <div class="comment_area">
+	            <input id="comment_input" type="text" autocomplete="off" spellcheck="false" name="commentary" placeholder="댓글을 작성해 주세요">
+	            <input id="comment_write_btn" type="button" value="작성하기" onclick="location.href='/comt/write'">
+	        </div>
+        </form>
+        <!-- comment wirte area end -->
 
         <hr>
-        <form name="form1" method="post"><input id="testp" name="test" value="${dto.video_id}">
+
+<%--
+         <form name="form1" method="post">
         <input type="button" value="장바구니에 담기" id="testbtn">
         </form>
-
+        
         <!-- comment list area start -->
-<%--        <div class="comment_list_area">
+        <div class="comment_list_area">
 			<c:forEach var="comt" items="${dto}">
 				<table class="comment_list">
 					<tr>
@@ -87,10 +92,10 @@
 		                <button id="co_comment_btn">답글</button>
 		            </div>
 				</c:forEach>
-        </div> --%>
+        </div>
         <hr>
-        <!-- comment list area start -->
-
+        <!-- comment list area end -->
+  --%>
 	</div>
 	
 <script src="/resources/js/video/detail.js"></script>
