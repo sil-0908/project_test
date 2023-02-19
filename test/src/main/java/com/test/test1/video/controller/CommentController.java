@@ -30,9 +30,9 @@ public class CommentController {
 //		int video_id = videoService.getvideo_id(id);
 		int userid = userService.getid(id);
 		dto.setUser_id(id);
+		commentService.insert(dto);
 //		System.out.println("dfkjsadfj;lasdjflkasdjls : " + dto.toString());
 		mv.setViewName("video/detail/{video_id}");
-		commentService.insert(dto);
 		return mv;
 	}
 	
