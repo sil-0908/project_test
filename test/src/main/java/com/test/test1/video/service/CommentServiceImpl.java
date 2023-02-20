@@ -1,5 +1,7 @@
 package com.test.test1.video.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,11 @@ public class CommentServiceImpl implements CommentService {
 	@Override
 	public void insert(CommentDto dto) {
 		commentDao.insert(dto);
+	}
+
+	@Override
+	public List<CommentDto> replyList() {
+		return commentDao.replyList();
 	}
 
 	

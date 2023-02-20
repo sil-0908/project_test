@@ -1,5 +1,7 @@
 package com.test.test1.video.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -16,6 +18,10 @@ public class CommentDao {
 //	video detail 내 댓글등록 02.20 장민실
 	public void insert(CommentDto dto) {
 		sqlSession.insert("comment.insert", dto);
+	}
+
+	public List<CommentDto> replyList() {
+		return sqlSession.selectList("comment.replyList");
 	}
 
 	

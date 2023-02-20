@@ -1,5 +1,7 @@
 package com.test.test1.video.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.test.test1.user.service.UserService;
 import com.test.test1.video.dto.CommentDto;
+import com.test.test1.video.dto.VideoDto;
 import com.test.test1.video.service.CommentService;
 import com.test.test1.video.service.VideoService;
 
@@ -26,7 +29,7 @@ public class CommentController {
 	
 //	video detail 내 댓글등록 02.20 장민실
 	@RequestMapping(value="write", method=RequestMethod.POST)
-	public ModelAndView insert(CommentDto dto, HttpSession session ,ModelAndView mv) {
+	public ModelAndView insert(CommentDto dto, HttpSession session, ModelAndView mv) {
 		String user_id = session.getAttribute("user_id").toString();
 		String nickname = session.getAttribute("nickname").toString();
 		int id = userService.getid(user_id);
@@ -39,10 +42,14 @@ public class CommentController {
 		return mv;
 	}
 
-//	video detail 내 댓글 불러오기
+//	video detail 댓글목록 구현
 	@RequestMapping("reply")
-	public ModelAndView reply() {
-		return null;
+	public ModelAndView replyList(ModelAndView mv) {
+		List<CommentDto> list = commentService.replyList();
+		mv.addObject("c_dto", list);
+		System.out.println(list.toString());
+		mv.setViewName("video/detail");
+		return mv;
 	}
 	
 	

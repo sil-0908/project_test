@@ -11,8 +11,7 @@
 <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-<%@ include file="/WEB-INF/views/common/navbar.jsp" %>
-<div id="navArea"></div>
+
 	<div class="video_all">
 	
         <!-- video area start -->
