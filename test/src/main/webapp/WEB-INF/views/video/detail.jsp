@@ -11,7 +11,8 @@
 <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-
+<%@ include file="/WEB-INF/views/common/navbar.jsp" %>
+<div id="navArea"></div>
 	<div class="video_all">
 	
         <!-- video area start -->
@@ -56,46 +57,41 @@
         <!-- button area end -->
 
         <!-- comment wirte area start -->
-        <form name="comt_write" method="post" enctype="multipart/form-data">
-        	<input type="hidden" name="video_id" value="${dto.video_id}">
+        <form name="comt_write" method="post">
+        	<input type="hidden" id="v_input" name="video_id" value="${dto.video_id}">
 	        <div class="comment_area">
 	            <input id="comment_input" type="text" autocomplete="off" spellcheck="false" name="commentary" placeholder="댓글을 작성해 주세요">
-	            <input id="comment_write_btn" type="button" value="작성하기" onclick="location.href='/comt/write'">
+	            <input id="comment_write_btn" type="button" value="작성하기">
 	        </div>
         </form>
         <!-- comment wirte area end -->
 
         <hr>
-
-<%--
-         <form name="form1" method="post">
-        <input type="button" value="장바구니에 담기" id="testbtn">
-        </form>
         
         <!-- comment list area start -->
         <div class="comment_list_area">
-			<c:forEach var="comt" items="${dto}">
+			<c:forEach var="comt" items="${c_dto}">
 				<table class="comment_list">
 					<tr>
-						<td id="com_title">${dto.nickname}&nbsp;&nbsp;</td>
-						<td id="com_data"><fmt:formatDate value="${dto.create_date}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+						<td id="com_title">${comt.nickname}&nbsp;&nbsp;</td>
+						<td id="com_data"><fmt:formatDate value="${comt.create_date}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
 					</tr>
 					<tr>
-						<td id="com_contents">${dto.commentary}</td>
+						<td id="com_contents">${comt.commentary}</td>
 					</tr>
 				</table>
-		            <div class="comment_btn">
+					<div class="comment_btn">
 		                <i class="far fa-thumbs-up comm_btn" id="like"></i>
 		                <p>좋아요</p>
 		                <i class="far fa-thumbs-down comm_btn" id="bad"></i>
 		                <p>싫어요</p>
 		                <button id="co_comment_btn">답글</button>
-		            </div>
-				</c:forEach>
+					</div>
+			</c:forEach>
         </div>
         <hr>
         <!-- comment list area end -->
-  --%>
+<%--  --%>
 	</div>
 	
 <script src="/resources/js/video/detail.js"></script>

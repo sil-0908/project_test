@@ -2,9 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="comment">
 
+<!-- video detail 내 댓글등록 02.20 장민실  -->
 	<insert id="insert">
 		<![CDATA[
-		insert into VIDEO_COMMENT (VIDE_ID, USER_ID, COMMENTARY, CREATE_DATE) 
+		insert into VIDEO_COMMENT (VIDEO_ID, USER_ID, COMMENTARY, CREATE_DATE) 
 		values (#{video_id} ,#{user_id}, #{commentary}, #{create_date})
 		]]>
 	</insert>

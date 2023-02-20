@@ -70,10 +70,6 @@ public class UserDao {
 	//비밀번호 변경 - 02.12 김범수
 	public void changepw(UserDto dto) {
 		sqlSessionTemplate.selectOne("user.changepw", dto);
-	}
-
-	public int getid(String id) {
-		return sqlSessionTemplate.selectOne("user.getid", id);
 	}	
 
 	//결제 처리 - 02.15 장재호
@@ -84,6 +80,11 @@ public class UserDao {
 	// 개인정보상세조회  02/16 김지혜 
 	public UserDto detail(String user_id) {
 		return sqlSessionTemplate.selectOne("user.detail", user_id);
+	}
+
+//	video detail 내 댓글등록 위해 유저정보 받아오기 02.20 장민실
+	public int getid(String user_id) {
+		return sqlSessionTemplate.selectOne("user.getid", user_id);
 	}
 	
 }

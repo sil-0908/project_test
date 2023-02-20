@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.test.test1.user.service.UserService;
@@ -23,17 +24,25 @@ public class CommentController {
 	@Autowired
 	VideoService videoService;
 	
-	@RequestMapping("write")
-	public ModelAndView insert(int video_id, CommentDto dto, HttpSession session, ModelAndView mv) {
-		System.out.println(video_id);
-		String id = session.getAttribute("user_id").toString();
-//		int video_id = videoService.getvideo_id(id);
-		int userid = userService.getid(id);
+//	video detail 내 댓글등록 02.20 장민실
+	@RequestMapping(value="write", method=RequestMethod.POST)
+	public ModelAndView insert(CommentDto dto, HttpSession session ,ModelAndView mv) {
+		String user_id = session.getAttribute("user_id").toString();
+		String nickname = session.getAttribute("nickname").toString();
+		int id = userService.getid(user_id);
 		dto.setUser_id(id);
+		dto.setNickname(nickname);		
+		System.out.println(dto.toString());
 		commentService.insert(dto);
-//		System.out.println("dfkjsadfj;lasdjflkasdjls : " + dto.toString());
-		mv.setViewName("video/detail/{video_id}");
+		mv.addObject("c_dto", dto);
+		mv.setViewName("video/detail");
 		return mv;
+	}
+
+//	video detail 내 댓글 불러오기
+	@RequestMapping("reply")
+	public ModelAndView reply() {
+		return null;
 	}
 	
 	

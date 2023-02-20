@@ -12,9 +12,14 @@ public class CommentServiceImpl implements CommentService {
 	@Autowired
 	CommentDao commentDao;
 
+//	video detail 내 댓글등록 02.20 장민실
 	@Override
 	public void insert(CommentDto dto) {
 		commentDao.insert(dto);
 	}
+
+	
+
+	
 
 }

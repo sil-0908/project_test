@@ -6,14 +6,18 @@ import org.springframework.stereotype.Repository;
 
 import com.test.test1.video.dto.CommentDto;
 
+
 @Repository
 public class CommentDao {
 	
 	@Autowired
 	SqlSession sqlSession;
 
+//	video detail 내 댓글등록 02.20 장민실
 	public void insert(CommentDto dto) {
 		sqlSession.insert("comment.insert", dto);
 	}
+
+	
 
 }

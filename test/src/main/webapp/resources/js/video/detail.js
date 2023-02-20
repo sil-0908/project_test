@@ -21,13 +21,8 @@ if (actor_info_content_height > actor_info_height) {
 	document.getElementById("info2").style.display = "block"; 
 }
 
-// 댓글 원글 눌렀을때 댓글작성하기
-const testbtn = document.querySelector('#testbtn');
-const testp = document.querySelector('#testp').value;
-
-
-  $("#testbtn").on('click', function(event){ 
-	  document.form1.action="/comt/write";
-	  document.form1.submit();
-        alert(testp);
-     });
+// 댓글 작성하기 버튼 눌렀을때 댓글작성하기
+   $("#comment_write_btn").on('click', function(event){ 
+	   document.comt_write.action="/comt/write";
+	   document.comt_write.submit();
+      });
